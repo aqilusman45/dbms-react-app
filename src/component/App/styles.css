@@ -1,0 +1,268 @@
+.avatar-side {
+  text-align: left;
+  margin: 10px 0px;
+}
+
+.avatar-side .ant-avatar-lg.ant-avatar-icon {
+  margin: 0 10px;
+}
+
+.menuCon .ant-menu-item {
+  padding: 0px 5px;
+  line-height: 20px;
+}
+
+span.avatar-username.hidden {
+  display: none;
+}
+
+.avatar-side.hidden {
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: transparent;
+  box-shadow: 0px 1px 10px #dad1d1;
+}
+
+.ant-badge-not-a-wrapper:not(.ant-badge-status) {
+  vertical-align: middle;
+  float: right;
+  margin: 11px;
+}
+
+aside.ant-layout-sider.ant-layout-sider-light.ant-layout-sider-has-trigger {
+  box-shadow: 1px 9px 10px grey;
+}
+
+i.anticon.back-icon-banner {
+  margin: 0 10px;
+}
+
+span.back-icon-title.ant-page-header-heading-title {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+header.ant-layout-header {
+  box-shadow: 4px 1px 10px grey;
+  margin-bottom: 3px;
+}
+
+.ant-carousel {
+  line-height: 0;
+}
+
+section.main-div-wrapper.ant-layout {
+  margin-top: 67px;
+}
+
+aside.slider-styles.ant-layout-sider.ant-layout-sider-light {
+  overflow: auto;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+}
+
+header.header-nav-bar.ant-layout-header {
+  background: #fff;
+  padding: 0;
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+}
+
+li.ant-menu-item.sign-out {
+  float: right;
+}
+
+li.ant-menu-item > a > span.side-bar-menu-link {
+  font-size: 12px;
+}
+
+.logo {
+  width: 95px;
+  margin: 0 133px 0 23px;
+  float: left;
+}
+
+section.main-content-layout.ant-layout {
+  margin-left: 251px;
+}
+
+.breadcrumbing.ant-breadcrumb {
+  display: inline-block;
+}
+
+#header {
+  position: relative;
+  z-index: 10;
+  max-width: 100%;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 8px #f0f1f2;
+  box-shadow: 0 2px 8px #f0f1f2;
+}
+
+.ant-layout-header {
+  padding: 0 18px;
+}
+
+.ant-drawer-wrapper-body {
+  overflow: hidden !important;
+}
+
+.ant-drawer-wrapper-body:hover {
+  overflow: auto !important;
+}
+
+.ant-layout-sider-zero-width-trigger {
+  position: absolute;
+  top: 64px;
+  right: -36px;
+  z-index: 1;
+  display: none;
+  width: 36px;
+  height: 42px;
+  color: black;
+  font-size: 18px;
+  line-height: 42px;
+  text-align: center;
+  background: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+/* .ant-drawer.ant-drawer-left.ant-drawer-open.slider-styles.no-mask.no-mask {
+  margin-top: 66px;
+} */
+
+.ant-layout-sider-zero-width-trigger:hover {
+  background: white;
+}
+
+img.nav-bar-logo-image {
+  width: 100px;
+  height: 50px;
+}
+
+.teaser-iframe > iframe {
+  width: 100%;
+}
+
+.ant-col.route-height {
+  height: 110vh;
+  margin-top: 68px;
+}
+
+span.ant-page-header-heading-sub-title {
+  color: white;
+  text-transform: capitalize;
+  font-size: 11px;
+}
+
+.percent-badge {
+  background: aqua;
+  border-radius: 10px;
+  font-size: 10px;
+  padding: 4px;
+  margin: 0 35px;
+}
+
+
+.banner-image-list {
+  height: 200px;
+  width: 200px;
+  display: table-cell;
+  text-align: center;
+  margin: 15px 0;
+}
+
+
+.banner-image-list img{
+  max-width: 100%;
+  height: auto;
+}
+
+@media all and (max-width: 1000px) {
+  header.header-nav-bar.ant-layout-header {
+    z-index: 99999;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    margin: auto;
+  }
+
+  li.ant-menu-item.sign-out {
+    float: right;
+  }
+
+  img.nav-bar-logo-image {
+    width: 80px;
+  }
+
+  .breadcrumbing.ant-breadcrumb {
+    display: none;
+  }
+
+  .ant-drawer-left,
+  .ant-drawer-right {
+    top: 0;
+    width: 0%;
+    margin-top: 66px;
+    height: 100%;
+  }
+
+  aside.slider-styles.ant-layout-sider.ant-layout-sider-light {
+    overflow: inherit;
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    left: 0;
+  }
+
+  .ant-layout-sider-zero-width-trigger {
+    display: block;
+  }
+
+  section.main-content-layout.ant-layout {
+    margin-left: 0;
+  }
+}
+
+.create-new-page-button {
+  margin: 25px;
+}
+
+.create-new-page-form-wrapper {
+  padding: 30px;
+}
+
+li.franchise-list {
+  list-style: none;
+  margin: 50px;
+  display: inline;
+}
+
+img.list-container-image {
+  max-width: 30%;
+}
+
+ul.franchise-list-container {
+  text-align: center;
+}
+
+.list-container {
+  display: inline;
+}
+
+.user-details-wrapper {
+  margin: 30px;
+}
+
+.form-user-details-wrapper {
+  margin: 30px 0;
+}
