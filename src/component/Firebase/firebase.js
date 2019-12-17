@@ -3,18 +3,19 @@ import "firebase/auth";
 import "firebase/firestore";
 import "firebase/storage";
 
-var config = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_DATABASE_URL,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
+var firebaseConfig = {
+  apiKey: "AIzaSyBBpyKJsZhXY2j-OGO41xqPjUo_4_wL7nI",
+  authDomain: "dummy-project2.firebaseapp.com",
+  databaseURL: "https://dummy-project2.firebaseio.com",
+  projectId: "dummy-project2",
+  storageBucket: "dummy-project2.appspot.com",
+  messagingSenderId: "239950467262",
+  appId: "1:239950467262:web:347fc119f41a2d14b98eef"
 };
 
 class Firebase {
   constructor() {
-    app.initializeApp(config);
+    app.initializeApp(firebaseConfig);
     this.auth = app.auth();
     this.db = app.firestore();
     this.storage = app.storage();
