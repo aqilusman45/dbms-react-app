@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './component/App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from "react-redux";
-import { CreateStore } from "./store";
 import Firebase, { FirebaseContext } from './component/Firebase';
 
 class FirebaseInitializer extends React.Component {
@@ -24,9 +22,7 @@ class FirebaseInitializer extends React.Component {
         if (firebase !== null) {
             return (
                 < FirebaseContext.Provider value={firebase}>
-                    <Provider store={CreateStore}>
                         <App />
-                    </Provider>
                 </FirebaseContext.Provider>
             )
         } else {

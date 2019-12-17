@@ -28,12 +28,8 @@ class SignInComponent extends React.Component {
       .then((authUser) => {
         this.props.firebase.getUserRole(authUser.user.uid)
           .then((doc) => {
-            if (doc.exists) {
-              if (doc.data().userrole === 'user') {
-                this.props.history.push(`/dashboard`);                  
-              } else if (doc.data().userrole === 'admin') {
+            if (doc.exists) {                
                 this.props.history.push(`/admin`);
-              }
             }
           })
         this.setState({

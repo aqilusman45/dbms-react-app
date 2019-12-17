@@ -20,7 +20,7 @@ class AdminSignInTabsBase extends React.Component {
         this.setState({
           redirect: false,
         },()=>{
-          this.props.history.push('/dashboard')
+          this.props.history.push('/admin')
         })
       }
     }

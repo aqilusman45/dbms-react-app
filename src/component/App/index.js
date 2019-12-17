@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withAuthentication } from "../Session";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { spring, AnimatedSwitch  } from "react-router-transition";
-import Dashboard from "../Dashboard";
 import AdminDashboard from "../Admin";
 import { AdminSignIn } from "../Admin_SignIn";
 import * as ROUTE from "../../constants/routes";

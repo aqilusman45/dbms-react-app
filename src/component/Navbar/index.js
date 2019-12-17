@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Breadcrumb, Menu, Icon, Button } from "antd";
 import { AuthUserContext } from "../Session";
-import * as ROUTE from "../../constants/routes";
 import { withRouter, Link } from "react-router-dom";
-import { LOGO } from "../Data";
 import { withFirebase } from "../Firebase";
+import LOGO from "../../assets/images/logo.png"
 
 const INITIAL_STATE = {
   current: "mail",
@@ -76,9 +75,7 @@ class NavbarBase extends Component {
         <div className="logo">
           <img
             className="nav-bar-logo-image"
-            src={ this.props.image || LOGO.image}
-            alt={this.props.title || LOGO.title}
-            title={this.props.title || LOGO.title}
+            src={ LOGO }
           />
         </div>
         <Menu
