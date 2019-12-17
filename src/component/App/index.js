@@ -60,7 +60,6 @@ class App extends Component {
               className="route-wrapper"
             >
               <Route path={`${ROUTE.ADMIN_DASHBOARD}`} component={AdminDashboard} />
-              <Route path={`${ROUTE.DASHBOARD}`} component={Dashboard} />
               <Route exact path={`/`} component={AdminSignIn} />
               <Route component={NoMatch} />
             </AnimatedSwitch>
