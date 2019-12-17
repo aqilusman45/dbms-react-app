@@ -30,41 +30,9 @@ class SignInComponent extends React.Component {
           .then((doc) => {
             if (doc.exists) {
               if (doc.data().userrole === 'user') {
-                if (doc.data().franchise !== this.props.match.params.franchise) {
-                  this.props.firebase.doSignOut();
-                  this.setState({
-                    error: {
-                      message: "This account does not belong to this franchise"
-                    }
-                  }, () => {
-                    setTimeout(() => {
-                      this.setState({
-                        ...INITIAL_STATE
-                      })
-                    }, 3000);
-                  })
-                } else {
-                  this.props.history.push(`${this.props.match.params.franchise}${ROUTES.DASHBOARD}/`);
-                }
-              } else if (doc.data().userrole === 'master-admin') {
-                this.props.history.push(`${ROUTES.MASTER_ADMIN}/add-franchise`);
+                this.props.history.push(`/dashboard`);                  
               } else if (doc.data().userrole === 'admin') {
-                if (doc.data().franchise !== this.props.match.params.franchise) {
-                  this.props.firebase.doSignOut();
-                  this.setState({
-                    error: {
-                      message: "This account does not belong to this franchise"
-                    }
-                  }, () => {
-                    setTimeout(() => {
-                      this.setState({
-                        ...INITIAL_STATE
-                      })
-                    }, 3000);
-                  })
-                } else {
-                  this.props.history.push(`${this.props.match.params.franchise}${ROUTES.ADMIN_DASHBOARD}/content-management`);
-                }
+                this.props.history.push(`/admin`);
               }
             }
           })

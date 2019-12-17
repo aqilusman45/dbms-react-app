@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import { withAuthentication } from "../Session";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { spring, AnimatedSwitch  } from "react-router-transition";
-import { Login } from "../Login"
 import Dashboard from "../Dashboard";
-import { Landing } from "../Landing";
 import AdminDashboard from "../Admin";
 import { AdminSignIn } from "../Admin_SignIn";
 import * as ROUTE from "../../constants/routes";
 import "./styles.css";
-import MasterAdmin from "../Master_Dashboard";
 
 // we need to map the `scale` prop we define below
 // to the transform style property
@@ -62,12 +59,9 @@ class App extends Component {
               mapStyles={mapStyles}
               className="route-wrapper"
             >
-              <Route exact path={ROUTE.LANDING} component={Landing} />
-              <Route path={`/:franchise${ROUTE.ADMIN_DASHBOARD}`} component={AdminDashboard} />
-              <Route path={`/:franchise${ROUTE.DASHBOARD}`} component={Dashboard} />
-              <Route path={ROUTE.MASTER_ADMIN} component={MasterAdmin} />
-              <Route exact path={`/sign-in`} component={AdminSignIn} />
-              <Route exact path={`/:franchise`} component={Login} />
+              <Route path={`${ROUTE.ADMIN_DASHBOARD}`} component={AdminDashboard} />
+              <Route path={`${ROUTE.DASHBOARD}`} component={Dashboard} />
+              <Route exact path={`/`} component={AdminSignIn} />
               <Route component={NoMatch} />
             </AnimatedSwitch>
           </Switch>

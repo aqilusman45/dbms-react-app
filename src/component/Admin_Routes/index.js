@@ -1,9 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import * as ROUTE from "../../constants/routes";
-import ContentManagement from "../Content-Management";
 import UserManagement from "../User_Management";
-import UserProgress from "../User_Progress";
+import AddNewMember from "../Add_New_Member";
 
 const NoMatch = () => <h1>404</h1>;
 
@@ -13,10 +11,9 @@ const AdminDashboardRoutes = () => {
     return (
       <>
         <Switch>
-          <Route exact path={`/:franchise${ROUTE.ADMIN_DASHBOARD}/${ROUTE.ADMIN_USERS}`} component={UserManagement} />
-          <Route path={`/:franchise${ROUTE.ADMIN_DASHBOARD}/${ROUTE.ADMIN_USERS}/:uid`} component={UserProgress} />
-          <Route path={`/:franchise${ROUTE.ADMIN_DASHBOARD}/${ROUTE.ADMIN_PAGES}`} component={ContentManagement} />
-          <Route component={NoMatch} />
+          <Route path={'/admin/members/add-member'} component={AddNewMember} />
+          <Route path={`/`} component={UserManagement} />
+            <Route component={NoMatch} />
         </Switch>
       </>
     );

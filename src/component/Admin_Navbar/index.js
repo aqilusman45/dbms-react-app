@@ -8,8 +8,8 @@ import { withFirebase } from "../Firebase";
 
 const breadcrumbNameMap = {
   [ROUTE.ADMIN_DASHBOARD]: "Admin",
-  [`/admin/${[ROUTE.ADMIN_PAGES]}`]: "Content Management",
-  [`/admin/${[ROUTE.ADMIN_USERS]}`]: "User Management",
+  [`/admin/members`]: "Members",
+  [`/admin/namaz-times`]: "Namaz Times",
 };
 
 class AdminNavbarBase extends Component {

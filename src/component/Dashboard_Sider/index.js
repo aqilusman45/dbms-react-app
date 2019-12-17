@@ -77,7 +77,7 @@ class SiderDasboardBase extends Component {
           {links && links.map((item, index) => {
             return (
               <Menu.Item key={item.link.link}>
-                <Link key={index} to={`/${this.props.match.params.franchise}/dashboard/${item.link.link}/`}>
+                <Link key={index} to={`/dashboard/${item.link.link}/`}>
                   <Icon type={item.link.icon} />
                   <span className="side-bar-menu-link">{item.link.text}</span>
                   {item.report !== null || item.report ? <span className="percent-badge">{`${Math.floor(item.report)}%`}</span> : ''}
@@ -90,7 +90,7 @@ class SiderDasboardBase extends Component {
               if (authUser.userrole === 'admin') {
                 return (
 
-                  <li className="ant-menu-item" role="menuitem" style={{paddingLeft: "24px"}}><Link to={`/${this.props.match.params.franchise}/admin/content-management`}><i
+                  <li className="ant-menu-item" role="menuitem" style={{paddingLeft: "24px"}}><Link to={`/admin/members`}><i
                     aria-label="icon: gift" className="anticon anticon-gift"><svg viewBox="64 64 896 896" focusable="false" className=""
                       data-icon="desktop" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                       <path

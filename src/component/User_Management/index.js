@@ -1,8 +1,8 @@
 import React from "react";
-import { Row, Col, PageHeader, Icon, Progress } from "antd";
-import { withFirebase } from "../Firebase";
+import { Row, Col, PageHeader, Icon, Button } from "antd";
 import { withRouter } from "react-router-dom";
 import { UserTable } from "../Users_Table";
+import Axios from "axios";
 
 const BackIcon = ({ icon, title, color }) => (
     <div className="back-icon-container ant-page-header-heading">
@@ -28,42 +28,23 @@ class UserManagementBase extends React.Component {
     }
 
     componentDidMount() {
-        let users = [];
-        var itemsProcessed = 0;
-        this.props.firebase.totalScoreForAllPages(this.props.match.params.franchise)
-            .then((data) => {
-                var allProgress = 0;
-                data.docs.forEach((item, index, array) => {
-                    allProgress += item.data()['total-score'];
-                });
-                return allProgress
-            })
-            .then((allProgress) => {
-                this.props.firebase.getAllUsers(this.props.match.params.franchise)
-                    .then((data) => {
-                        data.docs.forEach((item, index, array) => {
-                            this.props.firebase.getAllProgress(item.data().uid)
-                                .then((datas) => {
-                                    let myScore = 0;
-                                    datas.docs.forEach((item, index, array) => {
-                                        myScore += parseInt(item.data()['progress'])
-                                    });
-                                    users.push({
-                                        key: `${index}`,
-                                        email: item.data().email,
-                                        userrole: item.data().userrole,
-                                        uid: item.data().uid,
-                                        progress: <Progress type="circle" percent={Math.floor(((myScore / allProgress) * 100))} width={50} />
-                                    })
-                                    itemsProcessed++;
-                                    if (itemsProcessed === array.length) {
-                                        this.setUser(users)
-                                    }
-                                })
-
-
-                        })
+        Axios.get("http://localhost:3002/members/get-members")
+            .then((res) => {
+                let users = [];
+                var itemsProcessed = 0;
+                res.data.result.forEach((item, index, array) => {
+                    users.push({
+                        key: `${index}`,
+                        email: item.email,
+                        phoneno: item.phoneno,
+                        salary: item.salary,
+                        availability: item.avalability === 1 ? 'Available' : 'N/A',
                     })
+                    itemsProcessed++;
+                    if (itemsProcessed === array.length) {
+                        this.setUser(users)
+                    }
+                });
             })
             .catch((rej) => {
                 console.log(rej);
@@ -82,9 +63,12 @@ class UserManagementBase extends React.Component {
                 <Col className="route-height">
                     <PageHeader
                         style={{ backgroundColor: '#3e85c5', boxShadow: "0px 1px 10px grey" }}
-                        title={<BackIcon icon={"desktop"} color="white" title={"User Management"} />}
+                        title={<BackIcon icon={"desktop"} color="white" title={"Member Management"} />}
                         className="page-header"
                     />
+                    <Button style={{ margin: '10px' }} onClick={() => {
+                        this.props.history.push('/admin/members/add-member')
+                    }}>Add Member</Button>
                     <UserTable data={users} />
                 </Col>
             </Row>
@@ -92,6 +76,6 @@ class UserManagementBase extends React.Component {
     }
 }
 
-const UserManagement = withFirebase(withRouter(UserManagementBase));
+const UserManagement = withRouter(UserManagementBase);
 
 export default UserManagement;

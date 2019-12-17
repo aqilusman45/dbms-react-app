@@ -2,15 +2,27 @@ import React from "react";
 import { Row, Col, Tabs } from "antd";
 import { SignIn } from "../Sign_In";
 import { withFirebase } from "../Firebase";
-import * as ROUTE from "../../constants/routes";
-import { withRouter , } from "react-router-dom";
+import { withRouter, } from "react-router-dom";
 const { TabPane } = Tabs;
 
+const INITIAL_STATE = {
+  redirect: true,
+}
 
 class AdminSignInTabsBase extends React.Component {
-  componentDidMount() {
-    if (this.props.firebase.auth.currentUser !== null) {
-      this.props.history.push(ROUTE.ADMIN_DASHBOARD)
+  constructor(props) {
+    super(props)
+    this.state = { ...INITIAL_STATE }
+  }
+  componentWillUpdate() {
+    if (this.state.redirect) {
+      if (this.props.firebase.auth.currentUser !== null) {
+        this.setState({
+          redirect: false,
+        },()=>{
+          this.props.history.push('/dashboard')
+        })
+      }
     }
   }
   render() {
@@ -27,7 +39,7 @@ class AdminSignInTabsBase extends React.Component {
           }}
         >
           <Tabs>
-            <TabPane tab="Admin Sign In" key="1">
+            <TabPane tab="Login" key="1">
               <SignIn />
             </TabPane>
           </Tabs>
