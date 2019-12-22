@@ -15,15 +15,16 @@ const INITIAL_STATE = {
       text: 'Members'
     },
     report: null,
-  }, {
-    link: {
-      link: 'namaz-times',
-      icon: 'pie-chart',
-      position: 1,
-      text: 'Namaz Times'
-    },
-    report: null,
-  }],
+  }]
+  // }, {
+  //   link: {
+  //     link: 'namaz-times',
+  //     icon: 'pie-chart',
+  //     position: 1,
+  //     text: 'Namaz Times'
+  //   },
+  //   report: null,
+  // }],
 };
 
 

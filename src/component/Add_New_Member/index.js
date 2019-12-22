@@ -134,7 +134,7 @@ class AddNewMemberBase extends React.Component {
                 this.props.history.push('/admin/members')
             })
             .catch((rej)=>{
-                alert(JSON.parse(rej.request.response.error.sqlMessage));
+                alert('Member Already Exist');
             })
         }
     }
